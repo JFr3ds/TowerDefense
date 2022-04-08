@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
+                gameObject.SetActive(false);
             }
         }
     }

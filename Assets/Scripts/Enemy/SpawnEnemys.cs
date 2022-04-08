@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class SpawnEnemys : MonoBehaviour
 {
-    public GameObject prefEnemy;
     public float timeToSpawn;
     float timeRef;
     public int enemyAmmount;
@@ -23,6 +22,7 @@ public class SpawnEnemys : MonoBehaviour
 
     void CreateEnemy()
     {
-        GameObject go = Instantiate(prefEnemy, Path.Instance.points[0], Quaternion.identity);
+        GameObject enemy = EnemyPool.Instance.GetEnemy();
+        enemy.transform.position = Path.Instance.points[0];
     }
 }
